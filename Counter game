@@ -1,0 +1,13 @@
+string counterGame(long n) {
+    int count = 0;
+    while (n != 1) {
+        if ((n & (n - 1)) == 0) {
+            n >>= 1;
+        } else {
+            long x = 1L << (long)log2(n);
+            n -= x;
+        }
+        count++;
+    }
+    return (count % 2 == 0) ? "Richard" : "Louise";
+}
