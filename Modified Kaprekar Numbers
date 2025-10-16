@@ -1,0 +1,32 @@
+void kaprekarNumbers(int p, int q) {
+    bool found = false;
+
+    for (long long i = p; i <= q; i++) {
+        long long sq = i * i;
+
+        int d = 0;
+        long long temp = i;
+        while (temp > 0) {
+            d++;
+            temp /= 10;
+        }
+
+        long long div = 1;
+        for (int j = 0; j < d; j++) {
+            div *= 10;
+        }
+
+        long long right = sq % div;
+        long long left = sq / div;
+
+        if (left + right == i) {
+            printf("%lld ", i);
+            found = true;
+        }
+    }
+
+    if (!found)
+        printf("INVALID RANGE");
+
+    printf("\n");
+}
