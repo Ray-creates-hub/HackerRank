@@ -1,10 +1,12 @@
 int* stones(int n, int a, int b, int* result_count) {
+    
     if (a == b){
         *result_count = 1;
         int *result = malloc(sizeof(int));
         result[0] = (n-1)*a;
         return result;
     }
+    
     *result_count = n;
     
     int* result = malloc(n*sizeof(int));
