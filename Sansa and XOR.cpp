@@ -1,9 +1,12 @@
 int sansaXor(int arr_count, int* arr) {
+
     int result = 0;
+
     if(arr_count % 2 != 0){
         for(int i=0; i<arr_count;i+=2){
             result^=arr[i];
         }
     }
+
     return result;
 }
